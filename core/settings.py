@@ -283,7 +283,7 @@ EMAIL_PORT = 587
 # Correo
 EMAIL_HOST_USER = 'henry_rodriguez23201@elpoli.edu.co'
 # Constraseña
-EMAIL_HOST_PASSWORD = 'EstudiantePolitecnico22'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 if not DEBUG:
