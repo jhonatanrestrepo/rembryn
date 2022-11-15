@@ -22,5 +22,7 @@ Framework de Facebook --> Tailwind
 
 1. [x] Recuperación contraseña por correo
 1. [x] Verficación de correo electronico
+1. [x] Exporta Informes con registros
+1. [x] Importa y lee informes con información de rembryn
 
 
