@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tailwind_tags %}
+{% load tailwind_filters %}
+
+{% load humanize %}
+
+{% block title %}Inicio{% endblock title %}
+{% block extra_head %}{% endblock extra_head %}
+
+<!-- NAVBAR -->
+{% block navbar %}
+{% include 'components/navbar.html' %}
+{% endblock navbar %}
+
+<!-- left sidebar -->
+{% block left_sidebar %}
+{% include 'components/sidebars/left/sidebar.html' %}
+{% endblock left_sidebar %}
+
+<!-- main content -->
+{% block content %}
+
+
+<!-- POST FORM -->
+{% if user.is_authenticated %}
+{% for project in projects %}
+<div
+    class="flex-1 bg-white p-6 flex flex-col justify-between border rounded-lg mb-2 dark:border-dark-second border-gray-200 sm:px-6">
+    <div class="flex-1">
+        <h3 class="text-xl leading-6 cursor-default dark:text-dark-txt prose rounded font-bold text-gray-900">
+            {{project.estado}}
+        </h3>
+        <span class="text-base font-semibold text-gray-500">
+            Tienes cita de revisión el {{project.cita}}
+        </span>
+        <p class="text-xl font-semibold text-gray-900">
+            <a>
+                {{project.nombre}}
+            </a>
+        </p>
+        <span class="text-sm text-gray-500">{{project.direccion}}</span>
+        {% if project.tipo %}
+        <div class="block mt-2">
+            <p class="text-sm font-medium text-blue-600">
+                {{project.tipo}}
+            </p>
+        </div>
+        {% endif %}
+        <div class="flex space-x-1 text-sm text-gray-500">
+            <span>
+                {{project.fecha_inicio}} al {{project.fecha_Final}}
+            </span>
+        </div>
+
+    </div>
+
+
+    <h3 class="text-xl leading-6 cursor-default dark:text-dark-txt prose rounded font-bold text-gray-900">
+        Materiales Usados
+    </h3>
+    {% for materiale in materiales %}
+    {% if materiale.material %}
+    <div class="p-2 border-b border-gray-300 dark:border-dark-third flex space-x-4">
+        <div
+            class="flex-1 flex items-center justify-start pl-4 dark:bg-dark-third text-gray-600 text-lg dark:text-dark-txt">
+            <span>
+                {{materiale.material}}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+
+    <h3 class="text-xl leading-6 cursor-default dark:text-dark-txt prose rounded font-bold text-gray-900">
+        Empleados Asignados
+    </h3>
+    {% for empleado in empleados %}
+
+    <div class="p-2 border-b border-gray-300 dark:border-dark-third flex space-x-4">
+        <div>
+            <img src="{{empleado.empleado.foto.url}}" alt="Profile picture" class="w-10 h-10 rounded-full">
+        </div>
+        <div
+            class="flex-1 flex items-center justify-start pl-4 dark:bg-dark-third text-gray-600 text-lg dark:text-dark-txt">
+            <span>
+                {{empleado.empleado}}
+                {{empleado.empleado.identificacion}}
+            </span>
+        </div>
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'cotizaciones:cotizacion' %}"
+        class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+        <i class='bx bxs-wallet text-gray-500'></i>
+        <span class="font-semibold">Cotización del proyecto</span>
+    </a>
+
+</div>
+{% endfor %}
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+</div>
+{% endblock content %}
+
+{% block right_sidebar %}
+{% include 'components/sidebars/right/sidebar.html' %}
+{% endblock right_sidebar %}

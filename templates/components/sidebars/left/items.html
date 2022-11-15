@@ -1,0 +1,88 @@
+{% load static %}
+{% if user.is_authenticated %}
+<ul class="p-4">
+    <li>
+        <div
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third">
+            <span class="font-semibold">{{user.username}}</span>
+        </div>
+    </li>
+
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-store text-gray-500'></i>
+            <span class="font-semibold">Item1</span>
+        </a>
+    </li>
+
+    <li class="border-b border-gray-200 dark:border-dark-third mt-6"></li>
+    <p class="flex items-center space-x-2 p-2 dark:hover:bg-dark-third dark:focus:bg-dark-second">
+        Titulo 1
+    </p>
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-bookmark text-gray-500'></i>
+            <span class="font-semibold">Item3</span>
+        </a>
+    </li>
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-directions text-gray-500'></i>
+            <span class="font-semibold">Item4</span>
+        </a>
+    </li>
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-group text-gray-500'></i>
+            <span class="font-semibold">Item5</span>
+        </a>
+    </li>
+    <!-- <li>
+        <a href=""
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-group text-gray-500'></i>
+            <span class="font-semibold">Adopciones</span>
+        </a>
+    </li> -->
+
+    <li class="border-b border-gray-200 dark:border-dark-third mt-6"></li>
+    <p class="flex items-center space-x-2 p-2 dark:hover:bg-dark-third dark:focus:bg-dark-second">
+        Titulo 2
+    </p>
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-group text-gray-500'></i>
+            <span class="font-semibold">Item7</span>
+        </a>
+    </li>
+    <li>
+        <a href="#"
+            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third dark:focus:bg-dark-second">
+            <i class='bx bx-brush text-gray-500'></i>
+            <span class="font-semibold">Item8</span>
+        </a>
+    </li>
+
+
+    <!-- {% comment %} 
+    <li>
+        <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third">
+            <span class="w-10 h-10 rounded-full grid place-items-center bg-gray-300 dark:bg-dark-second">
+                <i class='bx bx-chevron-down'></i>
+            </span>
+            <span class="font-semibold">como etsa</span>
+        </a>
+    </li> 
+    {% endcomment %} -->
+
+</ul>
+{% else %}
+
+
+
+{% endif %}
