@@ -37,9 +37,10 @@ class User(AbstractUser):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     date_created = models.DateField(auto_now_add=True)
+    identificacion = models.CharField(null=True, blank=True,max_length=10)
+    celular = models.CharField(null=True, blank=True,max_length=10)
+    edad = models.IntegerField()
 
-    #User info
-    location = models.CharField(max_length=50, null=True, blank=True)
     def __str__(self):
         return self.user.username
 

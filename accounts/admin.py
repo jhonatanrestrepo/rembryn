@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User,Profile
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
@@ -12,5 +12,6 @@ class UsersAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = UsersResource
 
 admin.site.register(User,UsersAdmin)
+admin.site.register(Profile)
 
 

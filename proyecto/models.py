@@ -2,6 +2,8 @@ from django.db import models
 from django.conf import settings
 import os
 from django.utils import timezone
+from cotizaciones.models import Cotizacion
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -35,6 +37,8 @@ class Proyecto(models.Model):
     cliente = models.ForeignKey(User, on_delete=models.CASCADE, related_name="proyecto")
     cita = models.ForeignKey('Cita', on_delete=models.CASCADE)
     estado = models.ForeignKey('Estado', on_delete=models.CASCADE)
+    cotizacion =models.ForeignKey(Cotizacion, on_delete=models.CASCADE, related_name="proyectoCotizado")
+
 
     def __str__(self):
         return self.nombre

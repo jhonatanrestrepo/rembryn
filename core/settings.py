@@ -207,13 +207,13 @@ STATIC_URL = '/static/'
 JAZZMIN_SETTINGS = {
 
    # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Rembry Administración",
+    "site_title": "Rembryn Administración",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Administración Rembry",
+    "site_header": "Administración Rembryn",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Rembry",
+    "site_brand": "Rembryn",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "img/logo.png",
@@ -223,7 +223,7 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bienvenido a la administración",
 
     # Copyright on the footer
-    "copyright": "Realizado por Jonathan Restrepo, Mariana Munera y Henry Rodriguez",
+    "copyright": "Realizado por Jhonatan Restrepo, Mariana Munera y Henry Rodriguez",
 
     "navigation_expanded": True,
 
