@@ -10,7 +10,7 @@ class EmpleadosResource(resources.ModelResource):
         model = Empleado
 
 class EmpleadoAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    search_fields = ['identificacion']
+    search_fields = ['primer_nombre']
     resource_class = EmpleadosResource
 
 

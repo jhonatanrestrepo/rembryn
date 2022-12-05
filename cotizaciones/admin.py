@@ -11,7 +11,7 @@ class CotizacionResource(resources.ModelResource):
         model = Cotizacion
 
 class CotizacionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    search_fields = ['proyecto']
+    search_fields = ['fecha']
     resource_class = CotizacionResource
 
 admin.site.register(Cotizacion, CotizacionAdmin)
