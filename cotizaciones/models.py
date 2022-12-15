@@ -11,7 +11,7 @@ class Cotizacion(models.Model):
         verbose_name_plural = "Cotizaciones"
 
     def __str__(self):
-        return str(self.fecha)
+        return str(self.precio)
 
 
 

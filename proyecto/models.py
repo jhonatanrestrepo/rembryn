@@ -37,7 +37,7 @@ class Proyecto(models.Model):
     cliente = models.ForeignKey(User, on_delete=models.CASCADE, related_name="proyecto")
     cita = models.ForeignKey('Cita', on_delete=models.CASCADE)
     estado = models.ForeignKey('Estado', on_delete=models.CASCADE)
-    cotizacion =models.ForeignKey(Cotizacion, on_delete=models.CASCADE, related_name="proyectoCotizado")
+    cotizacion =models.ForeignKey(Cotizacion, blank=True, null=True,on_delete=models.CASCADE, related_name="proyectoCotizado")
 
 
     def __str__(self):

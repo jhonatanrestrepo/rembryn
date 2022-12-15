@@ -5,6 +5,7 @@ from proyecto.models import Proyecto
 
 class Material(models.Model):
     nombre = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=500, blank=True, null=True)
     precio = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
@@ -15,11 +16,11 @@ class Material(models.Model):
         verbose_name_plural = "Materiales"
 
 class Asignacion_Material(models.Model):
-    material = models.ForeignKey('Material', on_delete=models.CASCADE, related_name="material")
+    material = models.ManyToManyField('Material', related_name="material")
     proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE, related_name="proyecto+")
 
     def __str__(self):
-        return str(self.material)
+        return str(self.proyecto)
 
     class Meta:
         verbose_name = "Asignacion_Material"

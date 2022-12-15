@@ -18,12 +18,12 @@ def user_directory_path_empleado(instance, filename):
 class Empleado(models.Model):
     identificacion = models.CharField(max_length=100, blank=False)
     primer_nombre = models.CharField(max_length=100, blank=False)
-    segundo_nombre = models.CharField(max_length=100,blank=False,null=True)
+    segundo_nombre = models.CharField(max_length=100,blank=True,null=True)
     primer_apellido = models.CharField(max_length=100,blank=False)
-    segundo_apellido = models.CharField(max_length=100,blank=False,null=True)
-    edad = models.PositiveIntegerField(blank=False, null=True)
+    segundo_apellido = models.CharField(max_length=100,blank=True,null=True)
+    edad = models.PositiveIntegerField(blank=True, null=True)
     celular = models.CharField(max_length=10,blank=False)
-    email = models.EmailField(blank=False,null=True)
+    email = models.EmailField(blank=True,null=True)
     foto = models.ImageField(default='users/user_default_profile.png', upload_to=user_directory_path_empleado)
 
 

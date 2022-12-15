@@ -31,7 +31,7 @@ def user_directory_path_banner(instance, filename):
 
 
 class User(AbstractUser):
-    stripe_customer_id = models.CharField(max_length=50)
+    stripe_customer_id = models.CharField(max_length=50,null=True,blank=True)
 
 
 class Profile(models.Model):
@@ -39,7 +39,7 @@ class Profile(models.Model):
     date_created = models.DateField(auto_now_add=True)
     identificacion = models.CharField(null=True, blank=True,max_length=10)
     celular = models.CharField(null=True, blank=True,max_length=10)
-    edad = models.IntegerField()
+    edad = models.IntegerField(null=True,blank=True)
 
     def __str__(self):
         return self.user.username

@@ -12,24 +12,24 @@ from django.core.mail import send_mail
 class CotizacionProyecto(View):
     def get(self, request, *args, **kwargs):
         logged_in_user=request.user
-        materiales = Asignacion_Material.objects.filter(proyecto__cliente__in=[logged_in_user.id])
+        #materiales = Asignacion_Material.objects.filter(proyecto__cliente__in=[logged_in_user.id])
 
-        print(materiales)
+        #print(materiales)
 
         proyect = get_object_or_404(Proyecto, cliente__in=[logged_in_user.id])
 
-        print(proyect)
+        #print(proyect)
 
-        print(request.user.email)
+        #print(request.user.email)
 
         email = request.user.email
 
-        precio = 0
-        for materiale in materiales:
-            print(materiale.material, " --> ",materiale.material.precio)
-            precio = precio + materiale.material.precio
+        # precio = 0
+        # for materiale in materiales:
+        #     print(materiale.material, " --> ",materiale.material.precio)
+        #     precio = precio + materiale.material.precio
 
-        print(precio)
+        # print(precio)
             
         # p, created = Cotizacion.objects.get_or_create(proyecto=proyect,precio=precio)
         # p.save()
@@ -42,10 +42,12 @@ class CotizacionProyecto(View):
         )
 
         context={
-            'materiales':materiales,
+        #     'materiales':materiales,
+            'proyect':proyect
+
         }
         
-        return render(request, 'pages/index.html', context)
+        return render(request, 'pages/cotizacion.html', context)
         
 
 

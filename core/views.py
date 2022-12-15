@@ -16,7 +16,11 @@ class HomeView(LoginRequiredMixin, View):
 
         projects = Proyecto.objects.filter(cliente__in=[logged_in_user.id])
         empleados = Asignacion_Empleado.objects.filter(proyecto__cliente__in=[logged_in_user.id])
-        materiales = Asignacion_Material.objects.filter(proyecto__cliente__in=[logged_in_user.id])
+        materiales = Asignacion_Material.objects.filter(proyecto__cliente__in=[logged_in_user.id]).all()
+       
+        for o in materiales.all():
+            print(o.material, "Este es el material")
+
 
         context={
             'projects':projects,

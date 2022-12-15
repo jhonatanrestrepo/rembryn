@@ -246,20 +246,15 @@ JAZZMIN_SETTINGS = {
     "order_with_respect_to": ["proyecto","accounts","empleados","materiales"],
 
 
-
-
-
 }
 
 JAZZMIN_UI_TWEAKS = {
     #"theme": "darkly",
     #"theme": "simplex",
     #"theme": "slate",
+    #"theme": "sketchy",
 
  }
-
-
-
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
