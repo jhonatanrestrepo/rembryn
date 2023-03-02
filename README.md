@@ -10,8 +10,15 @@ Proyecto realizado en Python. en el framework de Django y el administrador de ba
 
 ![](docs/v1.png)
 
-4. Hacer las migraciones
-5. correr el proyecto python manage.py runserver
+4. Hacer las migraciones:
+    python manage.py makemigrations
+    python manage.py migrate
+
+5. Crear super usuario
+    python manage.py createsuperuser
+
+6. correr el proyecto
+    python manage.py runserver
 
 
 ### Diseño
@@ -22,7 +29,3 @@ Framework de Facebook --> Tailwind
 
 1. [x] Recuperación contraseña por correo
 1. [x] Verficación de correo electronico
-1. [x] Exporta Informes con registros
-1. [x] Importa y lee informes con información de rembryn
-
-
