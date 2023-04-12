@@ -8,7 +8,7 @@ from cotizaciones.models import Cotizacion
 User = settings.AUTH_USER_MODEL
 
 class Cita(models.Model):
-    fecha =models.DateField(auto_now_add=False)
+    fecha =models.DateField(auto_now_add=False,unique=True)
     hora =models.TimeField()
 
     def __str__(self):

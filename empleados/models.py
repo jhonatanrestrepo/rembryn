@@ -3,6 +3,9 @@ from proyecto.models import Proyecto
 import os
 from django.conf import settings
 
+from django.core.validators import MaxValueValidator, MinValueValidator
+
+
 # Create your models here.
 
 def user_directory_path_empleado(instance, filename):
@@ -16,20 +19,29 @@ def user_directory_path_empleado(instance, filename):
 
 
 class Empleado(models.Model):
-    identificacion = models.CharField(max_length=100, blank=False)
+    identificacion = models.IntegerField(blank=False,
+        default=1,
+        validators=[
+            MaxValueValidator(999999999999),
+            MinValueValidator(100_000)
+        ])
     primer_nombre = models.CharField(max_length=100, blank=False)
     segundo_nombre = models.CharField(max_length=100,blank=True,null=True)
     primer_apellido = models.CharField(max_length=100,blank=False)
     segundo_apellido = models.CharField(max_length=100,blank=True,null=True)
     edad = models.PositiveIntegerField(blank=True, null=True)
-    celular = models.CharField(max_length=10,blank=False)
+    celular = models.IntegerField(blank=False,
+        default=1,
+        validators=[
+            MaxValueValidator(3999999999),
+            MinValueValidator(300_000_0000)
+        ])
     email = models.EmailField(blank=True,null=True)
     foto = models.ImageField(default='users/user_default_profile.png', upload_to=user_directory_path_empleado)
 
 
     def __str__(self):
         return self.primer_nombre
-
 
 class Asignacion_Empleado(models.Model):
     empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE, related_name="empleados")
